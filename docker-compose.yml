@@ -6,16 +6,16 @@ services:
       - "8081:8081"
     networks:
       - labnet
-      
-proxy-service:
-  image: ghcr.io/mia-acton/cicdlab7part2/app
-  env_file: ./.env
-  depends_on:
-    - greeting-service
+
+  proxy-service:
+    image: ghcr.io/mia-acton/cicdlab7part2/app
+    env_file: ./.env
+    depends_on:
+      - greeting-service
     ports:
       - "8080:8080"
     networks:
       - labnet
 
-networks: 
+networks:
   labnet:
